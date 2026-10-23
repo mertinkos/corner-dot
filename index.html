@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Corner Dot</title>
+  <meta name="description" content="Corner Dot — Premium Quality. Menü, Google yorumları ve Instagram.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --muted: rgba(255, 255, 255, .55);
+      --line: rgba(255, 255, 255, .9);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Menü — en üstte */
+    .menu {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px 24px;
+      background: var(--fg);
+      color: var(--bg);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .35em;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease;
+      animation: fade .8s ease both;
+    }
+    .menu:hover { transform: translateY(-2px); box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--fg); }
+    .menu svg { width: 22px; height: 22px; flex: none; }
+
+    /* Logo */
+    main {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+    .logo {
+      width: min(520px, 100%);
+      height: auto;
+      display: block;
+      animation: fade 1s ease .15s both;
+    }
+
+    /* Yönlendirmeler */
+    .links {
+      width: 100%;
+      max-width: 440px;
+      display: grid;
+      gap: 14px;
+      animation: fade 1s ease .3s both;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 2px solid var(--line);
+      color: var(--fg);
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+    .link:hover, .link:focus-visible { background: var(--fg); color: var(--bg); outline: none; }
+    .link svg { width: 26px; height: 26px; flex: none; }
+    .link span { flex: 1; text-transform: uppercase; letter-spacing: .25em; font-size: 1rem; font-weight: 500; }
+    .link small { display: block; letter-spacing: .12em; font-size: .75rem; color: var(--muted); text-transform: none; font-weight: 400; }
+    .link:hover small, .link:focus-visible small { color: inherit; }
+    .link .arrow { width: 18px; height: 18px; }
+
+    footer {
+      margin-top: 32px;
+      font-size: .7rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== LİNKLER: aşağıdaki 3 adresi kendi linklerinizle değiştirin ===== -->
+  <a class="menu" id="menu-link" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Menü
+  </a>
+
+  <main>
+    <img class="logo" src="assets/logo.jpg" alt="Corner Dot — Premium Quality" width="642" height="303">
+
+    <nav class="links">
+      <a class="link" id="google-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg>
+        <span>Google Yorumları<small>Bizi değerlendirin</small></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+      <a class="link" id="instagram-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span>Instagram<small>@cornerdot</small></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <footer lang="en">Corner Dot &middot; Premium Quality</footer>
+
+</body>
+</html>
